@@ -34,9 +34,27 @@ echo 'Message has been sent';
 ?>
 <!DOCTYPE html>
 <html>
-<head>Thank you very much for your interest!</head>
+
+<style>
+   body {
+      background-color: black;
+   }
+   p, head, h3 {
+      margin: auto;
+      text-align: center;
+      color: white;
+   }
+</style>
+
+<head> <h3> Thank you very much for your interest! <h3> </head>
 <body>
-<div><p>We have sent a link to your email address. Please click on the link to finish your registration</p></div>
-<div><p>If you have any questions, please email peddiehacks@gmail.com.</p></div>
+   <div><h3>We have sent a link to your email address. Please click on the link to finish your registration</h3></div>
+   <div><h3>If you have any questions, please email peddiehacks@gmail.com.</h3></div>
 </body>
+
+<script src="./redirect.js"></script>
+<script> 
+    redirect(2750);
+</script>
+
 </html>

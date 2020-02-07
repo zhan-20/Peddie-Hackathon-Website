@@ -1,69 +1,22 @@
 <?php ?>
 <!DOCTYPE html>
 <html>
+
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PeddieHacks</title>
+<link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+<link rel="stylesheet" href="./registration.css">
+</head>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-body{
-     background-image:url("https://s3.envato.com/files/73f78e66-30c2-4e03-95df-827ea1e7d796/inline_image_preview.jpg");
-     -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-p.head{
-	font: cursive;
-	font-weight: bold;
-	font-size: 125px;
-	position: absolute;
-    color: #90EE90;
-	top: 0px;
-	left: 250px;
-
-}
-.container{
-	padding: 16px;
-}
-input[type=text], input[type=text] {
-	width: 98%;
-	padding: 15px;
-	margin: 5px 0 22px 0;
-	display: inline-block;
-    text-align:left;
-	border: solid;
-    left:0px;
-	background: yellow;
-    opacity:0.4;
-}
-input[type=text]:focus, input[type=text]:focus{
-	background-color: #ddd;
-}
-form{
-	position: absolute;
-	top: 300px;
-    color: grey;
-    left:200px;
-    right:200px;
-}
-.required {
-  color: red;
-}
-.register
-{
-    background-color: #4CAF50; /* Green */
-  border: none;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  font-weight:bold;
-}
 </style>
-<head>
-	<p class="head">Signing Up</p>
-</head>
+	
 <script src="sign_up.js"></script>
 <body>
+<h1 class="head">Signing Up</h1>
 	<form class="pure-form-stacked" method="post" action="sign_up.php" accept-charset='UTF-8'>
         <fieldset>
 		<div class="container">
@@ -79,7 +32,7 @@ form{
 		
         <label for="member1"><b>Team Member #1</b><span class="required">*</span></label>
 		<input id="member1" type="text" name="member1" placeholder="Enter Name" required></input>
-
+		
         <label for="member2"><b>Team Member #2</b></label>
 		<input id="member2" type="text" name="member2" placeholder="Enter Name"></input>
 
