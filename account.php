@@ -32,5 +32,23 @@ if (isset($_POST['login_user'])) {
 ?>
 <!DOCTYPE html>
 <html>
-<head>Congratulations! You're in!</head>
+
+<style> 
+    h3 {
+        text-align: center;
+        color: white;
+        margin: auto;
+    }
+    body {
+        background-color: black;
+    }
+</style>
+
+<body> <h3> Congratulations! You're in! </h3> </body>
+
+<script src="./redirect.js"></script>
+<script> 
+    redirect(1750);
+</script>
+
 </html>
