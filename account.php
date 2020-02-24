@@ -62,36 +62,28 @@ global $member4size;
     $allergies=$_POST['allergies'];
     $allergies=substr($allergies, 0, strlen($allergies)-1);
     $tshirts=substr($tshirts, 0, strlen($tshirts)-1);
+    $ttt=array($tshirts,"","","","");
+    $aaa=array($allergies,"","","","");
     for ($i=1; $i<$numberofpeople+1; $i++) {
         if ($i<$numberofpeople) {
-        $int=strpos($tshirts,";");
-        $element=substr($tshirts, 0, $int);
+        $int=strpos($ttt[$i-1],";");
+        $element=substr($ttt[$i-1], 0, $int);
         $membersizes[$i-1]=$element;
-        str_replace($tshirts, substr($tshirts, $int+2), $tshirts);
+        $ttt[$i]=substr($ttt[$i-1], $int+2);
         }
         else {
-            $string=strrev($tshirts);
-            if (strpos($string, " ") !== false)
-            $intt=strpos($string, " ");
-            else $intt=strlen($string);
-            $ss=substr($string, 0, $intt);
-           $membersizes[$i-1]=strrev($ss);
+          $membersizes[$i-1]=$ttt[$i-1];
         }
     }
     for ($j=1; $j<$numberofpeople+1; $j++) {
         if($j<$numberofpeople) {
-        $int1=strpos($allergies,";");
-        $element1=substr($allergies, 0, $int1);
+        $int1=strpos($aaa[$j-1],";");
+        $element1=substr($aaa[$j-1], 0, $int1);
         $memberallergy[$j-1]=$element1;
-        str_replace($allergies, substr($allergies, $int1+2), $allergies);
+        $aaa[$j]=substr($aaa[$j-1], $int1+2);
         }
         else {
-            $string=strrev($allergies);
-            if (strpos($string, " ") !== false)
-            $intt=strpos($string, " ");
-            else $intt=strlen($string);
-            $ss=substr($string, 0, $intt);
-            $memberallergy[$j-1]=strrev($ss);
+            $memberallergy[$j-1]=$aaa[$j-1];
         }
     }
     $member1size=$membersizes[0];
