@@ -9,7 +9,7 @@
     <div class="background1 faded chapel-background"></div>
         <div class="background2">
             <div class="form-style-10">
-    <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+    <form id="x" method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
 <hr>
 <div class="first">
     <div class="section">
@@ -60,8 +60,8 @@ $mail->Body=@"Email sent from Peddie School Computer Science Club "."at ".date("
       finish your registration, please click on the following link and verify your email account."."<a href='http://localhost/registration.php' action>Finish Registration (account info confirmation)<a>"."<hr />";
 
 if(!$mail->Send()) {
-   echo 'Message could not be sent.';
-   echo 'Mailer Error: ' . $mail->ErrorInfo;
+   $ss=$mail->ErrorInfo;
+   echo "<script type='text/javascript'>alert('Mail could not be sent.'+'$ss'+'Probably incorrect email address?')</script>";
    exit;
 }
 echo "<script type='text/javascript'>alert('Message has been sent')</script>";
