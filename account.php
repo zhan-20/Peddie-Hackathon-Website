@@ -6,7 +6,9 @@
 //$member31=$_SESSION['member3'];
 //$permissions1=$_SESSION['permission'];
 if(isset($_POST['login_user'])) {
+    session_start();
     global $email;
+    $email=$_SESSION['email'];
 global $teamname;
 global $teamleader;
 global $member1;
@@ -16,7 +18,7 @@ global $permissions;
 global $member4;
 global $schoolname;
 global $numberofpeople;
-$email=$_POST['email'];
+//$email=$_POST['email'];
 $schoolname=$_POST['schoolname'];
     $teamname=$_POST['teamname'];
     $teamleader=$_POST['leader'];
