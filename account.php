@@ -69,7 +69,9 @@ global $member4size;
         }
         else {
             $string=strrev($tshirts);
+            if (strpos($string, " ") !== false)
             $intt=strpos($string, " ");
+            else $intt=strlen($string);
             $ss=substr($string, 0, $intt);
            $membersizes[$i-1]=strrev($ss);
         }
@@ -83,7 +85,9 @@ global $member4size;
         }
         else {
             $string=strrev($allergies);
+            if (strpos($string, " ") !== false)
             $intt=strpos($string, " ");
+            else $intt=strlen($string);
             $ss=substr($string, 0, $intt);
             $memberallergy[$j-1]=strrev($ss);
         }
@@ -112,7 +116,7 @@ global $member4size;
         if(mysqli_query($link2, $query3)) {
         $message12="Record Inserted Successfully";
         echo "<script type='text/javascript'>alert('$message12');</script>";
-        //echo "<script type='text/javascript'>window.location.replace('./index.html');</script>";
+        echo "<script type='text/javascript'>window.location.replace('./index.html');</script>";
         die();
         }
     } else {
