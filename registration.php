@@ -29,9 +29,10 @@ input[type=text], input[type=text] {
 	border: solid;
     left:0px;
 	background: yellow;
-    opacity:0.4;
+	opacity:0.4;
+	color:black;
 }
-input[type=text]:focus, input[type=text]:focus{
+input[type=text]:focus{
 	background-color: #ddd;
 }
 ::placeholder{
@@ -59,18 +60,29 @@ form{
   font-size: 20px;
   font-weight:bold;
 }
+textarea{
+	font-size: 20px;
+	font-family: Times;
+	width:400px;
+	height:100px;
+}
+textarea::-webkit-input-placeholder {
+	color: gray;
+	font-size:20px;
+}
 </style>
 <head>
 	<p class="head">Signing Up</p>
 </head>
 <body>
-<script src="sign_up.js"></script>
-	<form class="pure-form-stacked" method="post" action="account.php" accept-charset='UTF-8'>
+<script type="text/javascript" src="./sign_up.js"></script>
+	<form id="form" class="pure-form-stacked" method="post" accept-charset='UTF-8' action="account.php" onsubmit="return checkinput();">
         <fieldset>
 		<div class="container">
 		<hr>
-		<label for="email"><b>Email</b><span class="required">*</span></label>
-		<input id="account" type="text" placeholder="Enter Email" name="email" required></input>
+
+		<label for="schoolname"><b>School Name</b><span class="required">*</span></label>
+		<input id="schoolname" type="text" placeholder="Enter School Name" name="schoolname" required></input>
 
         <label for="teamname"><b>Team Name</b><span class="required">*</span></label>
 		<input id="teamname" type="text" placeholder="Enter Team Name" name="teamname" required></input>
@@ -82,15 +94,26 @@ form{
 		<input id="member1" type="text" name="member1" placeholder="Enter Name" required></input>
 
         <label for="member2"><b>Team Member #2</b></label>
-		<input id="member2" type="text" name="member2" placeholder="Enter Name"></input>
+		<input id="member2" type="text" id="member2" name="member2" placeholder="Enter Name"></input>
 
         <label for="member3"><b>Team Member #3</b></label>
-		<input id="member3" type="text" name="member3" placeholder="Enter Name"></input>
+		<input id="member3" type="text" id="member3" name="member3" placeholder="Enter Name"></input>
+
+		<label for="member4"><b>Team Member #4</b></label>
+		<input id="member4" type="text" id="member4" name="member4" placeholder="Enter Name"></input>
 
         <label for="Permission Form"><b>Permission Form Signed for All Members?</b><span class="required">*</span></label>
 		<input id="permit" type="text" name="permit" placeholder="Yes/No" required></input>
+
+		<label for="T-shirt Sizes"><b>T-shirt Size for Members</b><span class="required">*</span></label>
+		<input id="t-shirts" type="text" name="t-shirts" placeholder="Enter T-shirt size of all team members in order; separate by a semicolon and a space; end with an exclamation mark." required></input>
+
+		<label for="Allergies/Dietary Restrictions"><b>Does any member have an allergy?</b><span class="required">*</span></label>
+		<br><br>
+		<textarea id="allergies" name="allergies" placeholder="Enter allergies/Dietary Restrictions for all members in order. If none, type N/A; separate by a semicolon and a space; end with an exclamation mark." required></textarea>
 		</hr>
-		<button type="submit" class="register" name="login_user" method="post" onclick="checkinput()">Sign Up</button>
+		<br><br><br>
+		<button type="submit" class="register" name="login_user" method="post">Sign Up</button>
 	</div>
     </fieldset>
 	</form>
